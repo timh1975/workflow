@@ -18,6 +18,9 @@ jobs:
       contents: read
 
     steps:
+
+    
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -29,10 +32,14 @@ jobs:
       - name: Check JavaScript files
         run: find src -name "*.js" || echo "No JavaScript files found"
 
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: javascript
+          source=root: scr
+
+
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
@@ -40,21 +47,23 @@ jobs:
       - name: Run CodeQL Custom Queries
         uses: github/codeql-action/analyze@v3
         with:
-          category: "custom-query-analysis"
-          queries: .github/queries
+          category: "custom-query-analysis"  
+          queries: .github/queries 
+          output: ./results/security-results.sarif  
 
+    
       - name: List files in results directory
         run: ls -la ./results || echo "Results directory not found"
 
+      
       - name: Find SARIF Files
         run: find . -name "*.sarif" || echo "No SARIF files found"
 
       - name: Upload CodeQL SARIF Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-sarif@v3
         with:
-          name: codeql-custom-results
-          path: ./results/security-results.sarif
-
+         sarif_file: rsults.sarif
+         category: Green Python
 
 
 
