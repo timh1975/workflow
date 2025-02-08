@@ -39,12 +39,13 @@ jobs:
         with:
             category: "custom-query"
             queries: .github/queries      
+            output: ./results/security-results.sarif
 
       - name: Upload Query Results as an Artifact
         uses: actions/upload-artifact@v4
         with:
           name: code-query-results
-          path: security-results.serif 
+          sarif_file: ./results/security-results.sarif
 
 
 
