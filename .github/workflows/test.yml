@@ -68,7 +68,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: javascript
-        queries: timh1975/workflow  # Use the correct pack name from `codeql-pack.yml`
+       
 
         # If you wish to specify custom queries, you can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.

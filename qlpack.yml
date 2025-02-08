@@ -1,6 +1,7 @@
-languages: javascript
-queries: timh1975/workflow/actions  
-library: false
-warnOnImplicitThis: false
-name: workflow
-version: 0.0.1
+name: timh1975
+version: 1.0.0
+language: JavaScript
+
+queries:
+  -\.github\queries\method.ql
+  
