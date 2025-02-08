@@ -2,6 +2,8 @@ name: Green Python
 
 on:
   push:
+    paths:
+        -'src'
     branches:
       - main
   pull_request:
@@ -37,6 +39,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: javascript
+          queries: default
 
 
       - name: Run CodeQL Custom Queries
