@@ -48,6 +48,7 @@ jobs:
         with:
           category: "custom-query-analysis"  
           queries: .github/queries 
+          output: ./results/security-results.sarif  
 
     
       - name: List files in results directory
