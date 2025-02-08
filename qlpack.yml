@@ -1,4 +1,5 @@
----
+languages: javascript
+queries: timh1975/workflow/actions  
 library: false
 warnOnImplicitThis: false
 name: workflow
