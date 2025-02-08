@@ -1,4 +1,4 @@
 import javascript
 
 from FunctionExpr func
-select func, "Function expression detected."
+select func, "Detected function expression at: " + func.getLocation().toString()
