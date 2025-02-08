@@ -1,0 +1,7 @@
+library: false
+warnOnImplicitThis: false
+name: timh1975/workflow  # Change this to your repo or package name
+version: 0.0.1
+dependencies:
+  codeql/javascript-queries: "*"
+
