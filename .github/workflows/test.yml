@@ -101,7 +101,11 @@ jobs:
         output: results.sarif
 
 
-
+    - name: Debugging
+      run: |
+          echo "Listing the queries directory:"
+          ls -R .github/queries
+      
 
 
         
