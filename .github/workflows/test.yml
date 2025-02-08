@@ -18,6 +18,10 @@ jobs:
       contents: read
 
     steps:
+
+      - name: Check JavaScript files
+        run: find src -name-"*.js" || echo "No JavaScript Files found"
+        
       - name: Checkout repository
         uses: actions/checkout@v4
 
