@@ -37,7 +37,6 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: javascript
-          source=root: scr
 
 
 
@@ -47,10 +46,9 @@ jobs:
       - name: Run CodeQL Custom Queries
         uses: github/codeql-action/analyze@v3
         with:
-            path: src
-            category: "custom-query-analysis"  
-            queries: .github/queries 
-            output: ./results/security-results.sarif  
+          category: "custom-query-analysis"  
+          queries: .github/queries 
+          output: ./results/security-results.sarif  
 
     
       - name: List files in results directory
@@ -61,10 +59,10 @@ jobs:
         run: find . -name "*.sarif" || echo "No SARIF files found"
 
       - name: Upload CodeQL SARIF Results
-        uses: github/codeql-action/upload-sarif@v3
+        uses: actions/upload-artifact@v4
         with:
-         sarif_file: rsults.sarif
-         category: Green Python
+          name: codeql-custom-results
+          path: ./results/security-results.sarif
 
 
 
