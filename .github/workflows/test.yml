@@ -30,7 +30,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check JavaScript files
-        run: find src -name-"*.js" || echo "No JavaScript Files found"
+        run: find src -name "*.js" || echo "No JavaScript files found"
+
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
@@ -45,10 +46,8 @@ jobs:
       - name: Run CodeQL Custom Queries
         uses: github/codeql-action/analyze@v3
         with:
-          path: src
           category: "custom-query-analysis"  
           queries: .github/queries 
-          output: ./results/security-results.sarif  
 
     
       - name: List files in results directory
