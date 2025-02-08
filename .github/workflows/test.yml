@@ -40,7 +40,11 @@ jobs:
             category: "custom-query"
             queries: .github/queries      
 
-
+      - name: Upload Query Results as an Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-query-results
+          path: security-results.serif 
 
 
 
