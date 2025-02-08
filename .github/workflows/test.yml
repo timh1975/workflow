@@ -34,18 +34,28 @@ jobs:
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
-      - name: Run CodeQL Queries
+      - name: Run CodeQL Custom Queries
         uses: github/codeql-action/analyze@v3
         with:
-            category: "custom-query"
-            queries: .github/queries      
-            output: ./results/security-results.sarif
+          category: "custom-query-analysis"  
+          queries: .github/queries 
+          output: ./results/security-results.sarif  
 
-      - name: Upload Query Results as an Artifact
+    
+      - name: List files in results directory
+        run: ls -la ./results || echo "Results directory not found"
+
+      
+      - name: Find SARIF Files
+        run: find . -name "*.sarif" || echo "No SARIF files found"
+
+      - name: Upload CodeQL SARIF Results
         uses: actions/upload-artifact@v4
         with:
-          name: code-query-results
-          sarif_file: ./results/security-results.sarif
+          name: codeql-custom-results
+          path: ./results/security-results.sarif
+
+
 
 
 
