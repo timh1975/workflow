@@ -1,5 +1,5 @@
 name : "Green Python"
-discription: "demo for Green Python"
+description: "demo for Green Python"
 
 runs:
   using: node22
