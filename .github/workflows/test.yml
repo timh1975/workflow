@@ -37,8 +37,7 @@ jobs:
       - name: Run CodeQL Custom Queries
         uses: github/codeql-action/analyze@v3
         with:
-          path:
-            -src  
+          path: src
           category: "custom-query-analysis"  
           queries: .github/queries 
           output: ./results/security-results.sarif  
