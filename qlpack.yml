@@ -3,5 +3,4 @@ version: 1.0.0
 language: JavaScript
 
 queries:
-  -\.github\queries\method.ql
-  
+  -.github\queries\method.ql
